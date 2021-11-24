@@ -54,7 +54,23 @@ console.log(cursive_letter(str));
 // }
 
 // console.log(capitalize(str));
+// 5. Смена регистра символов строки
+// Напишите функцию change_register(str), которая принимает в качестве аргумента строку и и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк».
 
+str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";  
+ 
+let change_register = (str)=> {
+    let newStr = "";
+    for(let i=0; i<str.length;i++){
+        if(str[i] === str[i].toLowerCase()){
+            newStr += str[i].toUpperCase();
+        } else{
+            newStr+=str[i].toLowerCase();
+        }
+    };
+    return newStr;
+};
+console.log(change_register(str));
 
 //6
 //Напишите функцию remove_char(str), которая возвращает строку, очищенную от всех не буквенно-цифровых символов
@@ -96,10 +112,16 @@ console.log(comparison("ff", "sss"));
 // 9 Поиск без учета регистра
 // Напишите функцию insensitive_search(str1, str2), которая осуществляет поиск подстроки str2 в строкеstr1 без учёта регистра символов.
 
-const  insensitive_search= (str1, str2)=> {
+str = "Каждый охотник желает знать";  
+ 
 
-    
+const  insensitiveSearch = (str1, str2)=> {
+    str1=str1.toLowerCase();
+    str2=str2.toLowerCase();
+    return str1.match(str2,str1);
 };
+
+console.log("9:",insensitiveSearch(str,"охотник"))
 
 
 // //10. ВерблюжийРегистр (CamelCase)
@@ -122,6 +144,87 @@ const repeatStr=(str, n)=> {
 console.log(repeatStr(str));
 
 
+// 13. Получить имя файла
+// Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу.
+
+let pathname = "/home/user/dir/file.txt";
+
+let path=(pathname)=> { 
+    return pathname.split("/").pop();
+};
+
+console.log(path(pathname));
+
+// 14. Заканчивается ли строка символами другой строки
+// Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str и определяет заканчивается ли строка символами подстроки.
+
+str = "Каждый охотник желает знать"; 
+str1 = "скрипт";
+str2 = "знать";
+console.log(str.endsWith(str2));
+
+// 15. Подстрока до/после указанного символа
+// Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или до указанного символа char в зависимости от параметра pos.
+
+str = 'Астрономия — Наука о небесных телах';
+
+const getSubstr = (str, char, pos)=>{
+str=str.toLowerCase();
+char=char.toLowerCase();
+let strLength=str.indexOf(char)+char.length;
+return str.slice(strLength,pos);
+};
+console.log(getSubstr(str,"наука", 30));
+// 16. Вставить подстроку в указанную позицию строки
+// Напишите функцию insert(str, substr, pos), которая вставляет подстроку substr в указханную позицию pos строки str. По умолчанию подстрока вставляется в начало строки.
+str = "Каждый охотник желает знать"; 
+const insert=(str, substr, pos)=>{
+let newStr=str.split('');
+newStr=newStr.splice(pos,0,substr);
+return newStr.join('');
+};
+console.log("/",insert(str,"jjj", 3));
+
+
+// 17. Ограничить длину строки
+// Напишите функцию limitStr(str, n, symb), которая обрезает строку, если она длиннее указанного количества символов n. Усеченная строка должна заканчиваться троеточием «...» (если не задан параметр symb) или заданным символом symb.
+str = "Каждый охотник желает знать"; 
+const limitStr=(str, n, symb="...")=>{
+    return str.substr(0,n)+symb;
+};
+
+console.log(limitStr(str,5));
+
+// 18. Поделить строку на фрагменты
+str = "привет";
+
+const cutString1 = (str, n) => {
+    let mas=[];
+    for(let i=0; i<str.length; i+=n){
+        mas.push(str.substr(i,n));
+    };
+    return mas;
+};
+console.log(cutString1(str,3));
+
+
+// 19. Количество вхождений символа в строке
+// Напишите функцию count(str, stringsearch), которая возвращает количество символов stringsearch в строке str.
+
+let symb = "о"; 
+str = "Aстрономия это наука о небесных объектах";
+let count=(str, symb)=>{
+    let countSymb=0;
+    str.toLowerCase();
+    for(let i=0; str.length>i;i++){
+        if(str[i]==symb){
+            countSymb+=1;
+        };
+    };
+    return countSymb;
+};
+
+console.log(count(str,symb));
 // 20. Удалить лишние пробелы из строки
 //Напишите функцию strip(str), которая удаляет все лишние пробелы из строки str.
 
