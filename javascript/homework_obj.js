@@ -328,3 +328,55 @@ const getNumber=(number,callback)=>{
 };
 
 console.log(getNumber(777588,getDigitsSum));
+ 
+//29 Напишите функцию, которая возвращает новый объект без указанных значений.
+
+const user= {
+    userName:"Даниил",
+    userAge:21,
+};
+
+const without=(obj, fild)=>{
+    let newObj =Object.assign({}, obj);
+    delete newObj[fild];
+    return newObj
+}
+
+let userWithout = without(user, "userAge");
+
+console.log(user);
+console.log(userWithout);
+
+// 30.
+//  Написать функцию, которая проверяет наличие поля в объекте.
+
+const user1= {
+    userName:"Даниил",
+    userAge:21,
+};
+
+const checkField=(obj, fild)=>{
+  return (obj[fild] === undefined) ? false : true;
+}
+
+console.log(checkField(user1, "userName"));
+
+// 31.
+// Написать функцию, которая принимает число от 1 до 7 и возвращает день недели. Решить с помощью объектов.
+
+
+const objDay = {
+    1:"Понедельник",
+    2:"Вторник",
+    3:"Среда",
+    4:"Четверг",
+    5:"Пятница",
+    6:"Суббота",
+    7:"Воскресенье",
+}
+
+const dayPrint=(obj,number)=>{
+    return (obj[number]===undefined) ? "ошибка" : obj[number];
+};
+
+console.log(dayPrint(objDay, 5));
