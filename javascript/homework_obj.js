@@ -381,5 +381,4 @@ const dayPrint=(obj,number)=>{
 
 console.log(dayPrint(objDay, 5));
 
-аа
 
