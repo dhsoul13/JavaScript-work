@@ -435,26 +435,32 @@ console.log(currentSums(numbers));
 
 // 3 Напишите код, который получает из массива чисел новый массив, содержащий пары чисел, которые в сумме должны быть равны семи: (0:7), (1:6) и т.д.
 
-// let arr = [0, 1, 2, 3, 4, 5, 6, 7];
+// let arr3 = [0, 1, 2, 3, 4, 5, 6, 7];
 
 // const sumSeven = (mas)=> {
 
 //     let newArray = [];
+//     let arrTwoNumber = [];
+    
+//     for (let value of mas){
+//         for(let value1 of mas){
+//             if( (value+value1) == 7){
+//                 newArray.push(value, value1);
+//                 arrTwoNumber.slice(value1, newArray);
+//                 break;s
+//             };
+//         };
+//     };
 
-//     console.log(newArray);
-
-//     for(let i=0; i < mas.length; i++){
-
-        
-       
-
-//         console.log(newArray);
-//     }
-
-// }
 
 
-// sumSeven(arr)
+
+//     return newArray;
+
+//     };
+
+// console.log(sumSeven(arr3));
+
 
 // 4. Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из первых букв слов строки str. 
 
@@ -491,19 +497,15 @@ let str5 = "JavaScript";
 const fooStr5 = (str)=>{
     let newStr = str.split('');
     let result = [];
-    console.log(newStr[0] + newStr[1]);
     for(let i = 0; i < newStr.length; i++){
         if(i==0){
             result.push(newStr[i] + newStr [i+1]);
         } else if(i==newStr.length-1){
-            
             result.push(newStr[i-1] + newStr [i]);
-        }else
-        {
+        } else{
             result.push(newStr[i-1] + newStr [i] + newStr [i+1]);
-        }
-    }
-
+        };
+    };
     return result;
 };
 
@@ -788,3 +790,4 @@ console.log(getDivisors(number20));
 
 
 // Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из строк, состоящих из предыдущего, текущего и следующего символа строки str. 
+
