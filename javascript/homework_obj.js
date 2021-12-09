@@ -484,6 +484,30 @@ console.log(fooStr(strPut));
 
 // 5 Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из строк, состоящих из предыдущего, текущего и следующего символа строки str. 
 
+let str5 = "JavaScript"; 
+
+// Ваш код 
+
+const fooStr5 = (str)=>{
+    let newStr = str.split('');
+    let result = [];
+    console.log(newStr[0] + newStr[1]);
+    for(let i = 0; i < newStr.length; i++){
+        if(i==0){
+            result.push(newStr[i] + newStr [i+1]);
+        } else if(i==newStr.length-1){
+            
+            result.push(newStr[i-1] + newStr [i]);
+        }else
+        {
+            result.push(newStr[i-1] + newStr [i] + newStr [i+1]);
+        }
+    }
+
+    return result;
+};
+
+console.log(fooStr5(str5)); // [Ja,Jav,ava,vaS,aSc,Scr,cri,rip,ipt,pt] 
 
 
 // 7. Напишите код, объединяющий три массива цифр, и располагающий цифры, в полученном массиве, в порядке убывания их значений
@@ -576,6 +600,23 @@ let result = reverseMas(numbersDop);
 console.log(result);
 
 // 11 Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+
+let masNumber = [1,2,2,6,8,9];
+
+const getTenSumFromMas = (array)=>{
+    let count = 0;
+    let sum = 0;
+    for (let i=0; array.length; i++){
+        sum+=array[i];
+        count+=1;
+        if(sum > 10){
+            break;
+        };
+    };
+    return count;
+}
+
+console.log("Колличество:", getTenSumFromMas(masNumber));
 
 
 
@@ -744,3 +785,6 @@ const getDivisors = (num)=>{
 }
 
 console.log(getDivisors(number20));
+
+
+// Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из строк, состоящих из предыдущего, текущего и следующего символа строки str. 
