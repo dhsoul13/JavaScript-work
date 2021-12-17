@@ -435,31 +435,6 @@ console.log(currentSums(numbers));
 
 // 3 Напишите код, который получает из массива чисел новый массив, содержащий пары чисел, которые в сумме должны быть равны семи: (0:7), (1:6) и т.д.
 
-// let arr3 = [0, 1, 2, 3, 4, 5, 6, 7];
-
-// const sumSeven = (mas)=> {
-
-//     let newArray = [];
-//     let arrTwoNumber = [];
-    
-//     for (let value of mas){
-//         for(let value1 of mas){
-//             if( (value+value1) == 7){
-//                 newArray.push(value, value1);
-//                 arrTwoNumber.slice(value1, newArray);
-//                 break;s
-//             };
-//         };
-//     };
-
-
-
-
-//     return newArray;
-
-//     };
-
-// console.log(sumSeven(arr3));
 
 
 // 4. Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из первых букв слов строки str. 
@@ -532,7 +507,7 @@ console.log(getArr(a,b,c));
 let numerics = [5, 7, 2, 9, 3, 1, 8];
 
 const foo = (numerics) =>{
-    return numerics.sort((a,b)=>{return b-a});
+    return numerics.sort((a,b)=>b-a);
 }
 
 console.log(foo(numerics));
