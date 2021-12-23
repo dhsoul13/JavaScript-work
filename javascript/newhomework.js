@@ -421,3 +421,99 @@ const startFight = (obj1,obj2,...rest)=>{
 
 console.log(startFight(hero_2, hero_1));
 
+
+const calculator = {
+      a: null,
+      b: null,
+      check: 0,
+      setValues: function(num1, num2,...reg){
+          
+          if (!isNaN (num1)) {
+              this.a = num1;
+          } else {
+              this.a = "Ошибка введенно число";
+              this.check=1;
+          }
+  
+          if (!isNaN (num2)) {
+              this.b = num2;
+          } else {
+              this.b = "Ошибка введенно число";
+              this.check=1;
+          }
+      },
+      sum: function(){
+          return (this.check == 0) ? this.a + this.b : "возможно ты не ввел числа/число"; 
+      },
+      mult: function(){
+          return  (this.check == 0)   ? this.a * this.b : "возможно ты не ввел числа/число"; 
+      },
+  }
+
+calculator.setValues(54, 2.5);
+console.log("А:",calculator.a);
+console.log("Б:",calculator.b);
+console.log("Сумма:",calculator.sum());
+console.log("Умножение:",calculator.mult());
+
+
+const vilage = {
+  title: null,
+  population: null,
+  sayTitle(){
+    console.log(this.title);
+    this.title;
+  },
+  sayPopulation(){
+    console.log(this.population);
+    this.population;
+  },
+  setNew(name, value){
+    this[name] = value;
+  },
+  sayYourCh(name){
+    console.log(this[name]);
+  },
+}
+
+const {...vilage1} = vilage;
+const {...vilage2} = vilage;
+
+vilage1.title = "Большое Болдино";
+vilage1.population = 5100;
+vilage1.sayPopulation();
+vilage1.sayTitle();
+vilage1.setNew("year", 500);
+console.log(vilage1.year);
+
+
+// vilage2.title = "Сергач";
+// vilage2.population = 7900;
+// vilage2.sayPopulation();
+// vilage2.sayTitle();
+
+// setTimeout (vilage2.sayTitle.bind(vilage2), 1000);
+
+
+
+const paral = ()=>{
+  return (a)=>{
+    return (b)=>{
+      return (c)=>{
+        return a * b * c
+      };
+    };
+  };
+};
+const one = paral;
+console.log(one()(3)(3)(3));
+
+
+
+const v = (a,b)=>{
+      return (h=10) => {
+        return a * b * h;
+      }
+}
+
+console.log(v(2,2)())
