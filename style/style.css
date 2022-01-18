@@ -1,0 +1,136 @@
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    font-family: 'Montserrat', sans-serif;
+
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.body__header-listTodo{
+    height: 150px;
+    width: 100%;
+    background-color: brown;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    padding: 40px 30px;
+}
+
+.body__header{
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.ul__item{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.ul__item button{
+    width: 30px;
+    height: 30px;
+}
+
+ul li:nth-child(even){
+    background-color: rgb(137, 138, 138);
+    color: #fff;
+}
+
+ul li:nth-child(even) span{
+    
+    color: #fff;
+}
+
+
+span{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    font-style: normal;
+    color: #000;
+    max-width: 1300px;
+}
+
+.ul__item span::before{
+    content: "";
+    min-width: 30px;
+    min-height: 30px;
+    margin-right: 10px;
+}
+ul li:nth-child(even) span::before{
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.delete{
+    text-decoration: line-through;
+    font-style: italic;
+    color: rgb(125, 120, 120);
+}
+
+ul li:nth-child(even) .delete::before{
+    content: "";
+    
+    text-decoration: none;
+
+}
+ul li:nth-child(even) .delete{
+    color: black;
+}
+
+.ul__item .delete::before{
+    content: "";
+    color: #fff;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='iso-8859-1'?%3e%3c!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3e%3csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 70 70' style='enable-background:new 0 0 70 70;' xml:space='preserve'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath style='fill:%23030104;' d='M26.474,70c-2.176,0-4.234-1.018-5.557-2.764L3.049,43.639C0.725,40.57,1.33,36.2,4.399,33.875 c3.074-2.326,7.441-1.717,9.766,1.35l11.752,15.518L55.474,3.285c2.035-3.265,6.332-4.264,9.604-2.232 c3.268,2.034,4.266,6.334,2.23,9.602l-34.916,56.06c-1.213,1.949-3.307,3.175-5.6,3.279C26.685,69.998,26.58,70,26.474,70z'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3c/svg%3e");
+
+}
+
+input {
+    width: 70%;
+    height: 30px;
+}
+button{
+    width: 30%;
+    height: 30px;
+}
